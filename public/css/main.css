@@ -1,0 +1,119 @@
+@charset 'utf-8';
+
+:root {
+  --base-color: #ebecf0;
+  --accent-color: #9da6b9;
+  --color-black: #babecc;
+  --color-white: #fff;
+  --main-width: 600px;
+  --form-component-size: 90%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--base-color);
+}
+
+main {
+  width: var(--main-width);
+  margin: 0 auto;
+}
+
+canvas {
+  display: none;
+}
+
+form, .result {
+  border-radius: 50px;
+  background-color: var(--base-color);
+  box-shadow: 5px 5px 20px #c8c9cc,
+              -5px -5px 20px var(--color-white);
+  padding: 10px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+form fieldset:first-child {
+  margin-top: 30px;
+}
+
+form > div {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+form > div input {
+  width: var(--form-component-size);
+}
+
+fieldset {
+  border: none;
+  border-radius: 15px;
+  box-shadow: -6px -6px 8px rgba(255, 255, 255, 0.9),
+               5px 5px 8px rgba(0, 0, 0, 0.07);
+  width: var(--form-component-size);
+  margin: 0 auto 20px;
+}
+
+legend {
+  display: contents;
+}
+
+fieldset div {
+  display: flex;
+  align-items: center;
+}
+
+fieldset input {
+  flex-grow: 1;
+}
+
+button, input {
+  border: 0;
+  outline: 0;
+  font-size: 16px;
+  border-radius: 320px;
+  padding: 16px;
+  background-color: var(--base-color);
+  text-shadow: 1px 1px 0 var(--color-white);
+}
+
+input {
+  margin-right: 8px;
+  box-shadow: inset 2px 2px 5px #BABECC, inset -5px -5px 10px var(--color-white);
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  text-shadow: 1px 1px 0 var(--color-white);
+}
+
+input:focus {
+  box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px var(--color-white);
+}
+
+button {
+  color: #007bff;
+  font-weight: bold;
+  box-shadow: -5px -5px 20px var(--color-white), 5px 5px 20px #BABECC;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-weight: 600;
+  text-shadow: 1px 1px 0 var(--color-white);
+  padding: 16px 40px;
+}
+
+button:hover {
+  box-shadow: -2px -2px 5px #FFF, 2px 2px 5px #BABECC;
+}
+
+button:active {
+  box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
+}
+
+.result {
+  width: var(--main-width);
+}

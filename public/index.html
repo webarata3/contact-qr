@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146637588-1"></script>
+  <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag() { dataLayer.push(arguments); }
+   gtag('js', new Date());
+
+   gtag('config', 'UA-146637588-1');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>連絡先QRコード作成</title>
+  <link rel="stylesheet" href="css/main.css">
+  <script defer src="js/bundle.js"></script>
+ </head>
+ <body>
+  <main>
+   <form>
+    <fieldset>
+     <legend>名前</legend>
+     <div>
+      <input id="lastName" type="text" placeholder="姓">
+      <input id="firstName" type="text" placeholder="名">
+     </div>
+    </fieldset>
+    <fieldset>
+     <legend>名前（フリガナ）</legend>
+     <div>
+      <input id="lastNameKana" type="text" placeholder="姓（フリガナ）">
+      <input id="firstNameKana" type="text" placeholder="名（フリガナ）">
+     </div>
+    </fieldset>
+    <div>
+     <input id="tel" type="text" placeholder="電話番号">
+    </div>
+    <div>
+     <input id="email" type="text" placeholder="電子メール">
+    </div>
+    <div>
+     <button type="button">QRコード生成</button>
+    </div>
+   </form>
+
+   <div class="result">
+    <h2>QRコード</h2>
+    <canvas id="qrCode"></canvas>
+   </div>
+  </main>
+ </body>
+</html>
