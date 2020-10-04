@@ -11,6 +11,7 @@
         "webpack-cli": "^3.3.12"
     },
     "scripts": {
+        "build": "npx webpack -o public/js/bundle.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "",
