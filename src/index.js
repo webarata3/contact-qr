@@ -1,19 +1,19 @@
 const QRCode = require('qrcode');
-const canvas = document.querySelector('#qrCode');
+const iOsCanvas = document.querySelector('#iOsQrCode');
 
+//FN;CHARSET=UTF-8:###{firstName}###　###{lastName}###
 const VCARD_TEMPLATE = `BEGIN:VCARD
 VERSION:4.0
-FN;CHARSET=UTF-8:###{firstName}###　###{lastName}###
 N;CHARSET=UTF-8:###{lastName}###;###{firstName}###;;;
 X-PHONETIC-FIRST-NAME;CHARSET=UTF-8:###{firstNameKana}###
 X-PHONETIC-LAST-NAME;CHARSET=UTF-8:###{lastNameKana}###
-SORT-STRING;CHARSET=SHIFT_JIS:###{lastNameKana}### ###{firstNameKana}###
 `;
+//SORT-STRING;CHARSET=SHIFT_JIS:###{lastNameKana}### ###{firstNameKana}###
 
 const VCARD_END = 'END:VCARD';
 
 const VCARD_TEL = 'TEL;TYPE=CELL:';
-const VCARD_EMAIL = 'EMAIL;TYPE=INTERNET;TYPE=HOME:';
+const VCARD_EMAIL = 'EMAIL;TYPE=INTERNET:';
 
 document.querySelector('button').addEventListener('click', () => {
   const lastName = document.querySelector('#lastName').value;
@@ -40,7 +40,14 @@ document.querySelector('button').addEventListener('click', () => {
 
   console.log(vcard);
 
-  QRCode.toCanvas(canvas, vcard, function (error) {
-    canvas.style.display = 'inline-block';
+  QRCode.toCanvas(iOsCanvas, vcard, function (error) {
+    iOsCanvas.style.display = 'inline-block';
+  });
+
+  document.querySelector('#download').addEventListener('click', () => {
+    const link = document.createElement("a");
+    link.href = iOsCanvas.toDataURL("image/png");
+    link.download = "test.png";
+    link.click();
   });
 });

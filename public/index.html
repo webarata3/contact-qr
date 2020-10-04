@@ -44,9 +44,18 @@
    </form>
 
    <div class="result">
-    <h2>QRコード</h2>
-    <canvas id="qrCode"></canvas>
+    <div>
+     <h2>Android</h2>
+     <canvas id="androidQrCode"></canvas>
+    </div>
+    <div>
+     <h2>iPhone</h2>
+     <canvas id="iOsQrCode"></canvas>
+     <button id="download">ダウンロード</button>
+    </div>
    </div>
+   <a
+    href="intent://contacts/#Intent;action=android.intent.action.INSERT_OR_EDIT;type=vnd.android.cursor.item/cntact;S.name=TESTTEST;S.phone=209384;end">aaa</a>
   </main>
  </body>
 </html>
